@@ -7,4 +7,4 @@ def christmas():
         center_star = star.center(20, " ")
         print(center_star)
     print('        ||||')
-    print('        ||||')
+christmas()

@@ -1,3 +1,4 @@
+import lists
 # menuy.py - function style menu
 # Imports typically listed at top
 # each import enables us to use logic that has been abstracted to other files and folders
@@ -13,16 +14,23 @@
 # 1. file names will be run by exec(open("filename.py").read())
 # 2. function references will be executed directly file.function()
 main_menu = [
-    ["Keypad", exec(open("python/keypad.py").read())],
-    ["Swap", exec(open("python/swap.py").read())],
-    ["Christmas Tree", exec(open("python/tree.py").read())],
+    ["Keypad", "python/keypad.py"],
+    ["Swap", "python/swap.py"],
+    ["Christmas Tree", "python/tree.py"],
 ]
 
 # Submenu list of [Prompt, Action]
 # Works similarly to main_menu
 sub_menu = [
-    ["Ship", exec(open("python/ship.py").read())],
-    ["Icecream", exec(open("python/icecream.py").read())],
+    ["Ship", "python/ship.py"],
+    ["Icecream", "python/icecream.py"],
+]
+
+sub_menu3 = [
+    ["100 Fibonacci", "python/fib.py"],
+    ["Factorial", lists.tester2],
+    ["Loops", lists.tester1],
+
 ]
 
 #patterns_sub_menu = [
@@ -42,8 +50,9 @@ banner = f"\n{border}\nPlease Select An Option\n{border}"
 def menu():
     title = "Function Menu" + banner
     menu_list = main_menu.copy()
+    menu_list.append(["Fun Functions", menu])
     menu_list.append(["Animations", submenu])
-  #  menu_list.append(["Patterns", patterns_submenu])
+    menu_list.append(["Lists and Loops", submenu3])
     buildMenu(title, menu_list)
 
 # def submenu
@@ -52,6 +61,10 @@ def menu():
 def submenu():
     title = "Function Submenu" + banner
     buildMenu(title, sub_menu)
+
+def submenu3():
+    title = "Function Submenu" + banner
+    buildMenu(title, sub_menu3)
 
 #def patterns_submenu():
   #  title = "Function Submenu" + banner
