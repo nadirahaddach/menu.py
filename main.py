@@ -39,7 +39,7 @@ sub_menu2 = [
 ]
 
 sub_menu3 = [
-    ["100 Fibonacci", "python_challenges/fib.py"],
+    ["100 Fibonacci", "python/fib.py"],
     ["Factorial", lists.tester2],
     ["OOP Factorial", oop_fact.run_factorial],
     ["OOP LCM", oop_lcm.lcm_run],
