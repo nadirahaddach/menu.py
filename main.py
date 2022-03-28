@@ -1,4 +1,7 @@
 import lists
+import imp_lcm
+import oop_lcm
+import oop_fact
 # menuy.py - function style menu
 # Imports typically listed at top
 # each import enables us to use logic that has been abstracted to other files and folders
@@ -21,15 +24,26 @@ main_menu = [
 
 # Submenu list of [Prompt, Action]
 # Works similarly to main_menu
-sub_menu = [
-    ["Ship", "python/ship.py"],
+sub_menu1 = [
+    ["Swap", "python/swap.py"],
+    ["Keypad", "python/keypad.py"],
+    ["Christmas Tree", "python/tree.py"],
+    ["Loops", lists.tester1],
+
+]
+
+sub_menu2 = [
     ["Icecream", "python/icecream.py"],
+    ["Ship", "python_challenges/ship.py"],
+
 ]
 
 sub_menu3 = [
-    ["100 Fibonacci", "python/fib.py"],
+    ["100 Fibonacci", "python_challenges/fib.py"],
     ["Factorial", lists.tester2],
-    ["Loops", lists.tester1],
+    ["OOP Factorial", oop_fact.run_factorial],
+    ["OOP LCM", oop_lcm.lcm_run],
+    ["Imperative LCM", imp_lcm.lcm],
 
 ]
 
@@ -50,17 +64,21 @@ banner = f"\n{border}\nPlease Select An Option\n{border}"
 def menu():
     title = "Function Menu" + banner
     menu_list = main_menu.copy()
-    menu_list.append(["Fun Functions", menu])
-    menu_list.append(["Animations", submenu])
-    menu_list.append(["Lists and Loops", submenu3])
+    menu_list.append(["Fun Functions", submenu1])
+    menu_list.append(["Animations", submenu2])
+    menu_list.append(["Math", submenu3])
     buildMenu(title, menu_list)
 
 # def submenu
 # using sub menu list above:
 # sub_menu works similarly to menu()
-def submenu():
+def submenu1():
     title = "Function Submenu" + banner
-    buildMenu(title, sub_menu)
+    buildMenu(title, sub_menu1)
+
+def submenu2():
+    title = "Function Submenu" + banner
+    buildMenu(title, sub_menu2)
 
 def submenu3():
     title = "Function Submenu" + banner
@@ -118,8 +136,6 @@ def buildMenu(banner, options):
 
 if __name__ == "__main__":
     menu()
-
-
 
 # Menu options in print statement
 # def print_menu1():
