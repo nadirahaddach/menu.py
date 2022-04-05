@@ -34,7 +34,7 @@ sub_menu1 = [
 
 sub_menu2 = [
     ["Icecream", "python/icecream.py"],
-    ["Ship", "python_challenges/ship.py"],
+    ["Ship", "python/ship.py"],
 
 ]
 
